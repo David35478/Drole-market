@@ -24,13 +24,13 @@ export const analyzeMarket = async (market: Market): Promise<string> => {
       Do not give financial advice. Focus on the events, news, or data points that bettors should watch.
     `;
 
-    
-const model = ai.getGenerativeModel({ model: "gemini-pro" });
-const result = await model.generateContent(prompt);
-const response = await result.response;
-const text = response.text();
+    // Use Gemini 2.5 Flash - more capable than 2.0
+    const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const text = response.text();
 
-    return response.text || "Could not generate analysis.";
+    return text || "Could not generate analysis.";
   } catch (error) {
     console.error("Error analyzing market:", error);
     return "An error occurred while fetching the analysis. Please try again later.";
@@ -66,13 +66,18 @@ export const getMarketSentiment = async (market: Market): Promise<MarketSentimen
       }
     `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: prompt,
-      config: { responseMimeType: 'application/json' }
+    // Use Gemini 2.5 Flash with JSON mode
+    const model = ai.getGenerativeModel({ 
+      model: "gemini-2.5-flash",
+      generationConfig: {
+        responseMimeType: "application/json"
+      }
     });
-
-    const text = response.text;
+    
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const text = response.text();
+    
     if (!text) throw new Error("No response");
     
     return JSON.parse(text) as MarketSentiment;
@@ -86,4 +91,4 @@ export const getMarketSentiment = async (market: Market): Promise<MarketSentimen
       bearishFactors: ["Pending Analysis"]
     };
   }
-};
+}
