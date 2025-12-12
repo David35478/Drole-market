@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, view, onSearch, onMenuToggle }) =
                             <div className="flex items-center justify-between group cursor-pointer" onClick={() => togglePref('marketAlerts')}>
                                 <div className="flex flex-col">
                                     <span className="text-sm text-gray-200 font-medium group-hover:text-white transition-colors">Market Alerts</span>
-                                    <span className="text-[10px] text-poly-subtext leading-tight">New listings & resolution updates</span>
+                                    <span className="text-[10px] text-poly-subtext leading-tight">New listings and resolution updates</span>
                                 </div>
                                 <div 
                                     className={`w-10 h-5 rounded-full relative transition-colors duration-200 ease-in-out ${user.notificationPreferences.marketAlerts ? 'bg-poly-blue' : 'bg-poly-hover'}`}
@@ -117,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, view, onSearch, onMenuToggle }) =
                             <div className="flex items-center justify-between group cursor-pointer" onClick={() => togglePref('priceChanges')}>
                                 <div className="flex flex-col">
                                     <span className="text-sm text-gray-200 font-medium group-hover:text-white transition-colors">Price Changes</span>
-                                    <span className="text-[10px] text-poly-subtext leading-tight">Significant volatility alerts (&gt;5%)</span>
+                                    <span className="text-[10px] text-poly-subtext leading-tight">Significant volatility alerts (over 5%)</span>
                                 </div>
                                 <div 
                                     className={`w-10 h-5 rounded-full relative transition-colors duration-200 ease-in-out ${user.notificationPreferences.priceChanges ? 'bg-poly-blue' : 'bg-poly-hover'}`}
