@@ -2,8 +2,9 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Market, MarketSentiment } from '../types';
 
 const getAiClient = () => {
-  if (!process.env.API_KEY) return null;
-  return new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) return null;
+  return new GoogleGenerativeAI(apiKey);  
 };
 
 export const analyzeMarket = async (market: Market): Promise<string> => {
@@ -23,10 +24,11 @@ export const analyzeMarket = async (market: Market): Promise<string> => {
       Do not give financial advice. Focus on the events, news, or data points that bettors should watch.
     `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: prompt,
-    });
+    
+const model = ai.getGenerativeModel({ model: "gemini-pro" });
+const result = await model.generateContent(prompt);
+const response = await result.response;
+const text = response.text();
 
     return response.text || "Could not generate analysis.";
   } catch (error) {
