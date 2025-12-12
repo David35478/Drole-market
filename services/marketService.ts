@@ -323,7 +323,9 @@ export const MarketService = {
      saveState();
      notify();
   }
-};  const storedComments = localStorage.getItem(STORAGE_KEYS.COMMENTS);
+};  try {
+  // code that may throw, e.g. reading/parsing stored comments
+  const storedComments = localStorage.getItem("comments");
   if (storedComments) {
     comments = JSON.parse(storedComments);
   }
