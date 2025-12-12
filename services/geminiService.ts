@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Market, MarketSentiment } from '../types';
 
 const getAiClient = () => {
