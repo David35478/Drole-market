@@ -1,8 +1,8 @@
 # 🔮 Drole Market
 
-**Drole Market** is a decentralized prediction market platform simulator (inspired by Polymarket). It allows users to trade shares on the outcome of future events—ranging from Crypto and Politics to Sports and Pop Culture.
+**Drole Market** is a decentralized prediction market platform simulator. It allows users to trade shares on the outcome of future events—ranging from Crypto and Politics to Sports and Pop Culture.
 
-Beyond standard trading, this project integrates **Google Gemini AI** to provide real-time sentiment analysis and market insights, giving traders an edge in understanding the "vibe" of a market.
+Beyond standard trading, this project integrates **AI** to provide real-time sentiment analysis and market insights, giving traders an edge in understanding the "vibe" of a market.
 
 ![Project Preview]
 
