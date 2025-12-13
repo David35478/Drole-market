@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import MarketCard from '../components/MarketCard';
-import MarketDetail from '../components/MarketDetail';
-import Portfolio from '../components/Portfolio';
-import CreateMarketForm from '../components/CreateMarketForm';
-import { MarketService } from '../services/marketService';
-import { Market, User } from '../types';
+import Navbar from './components/Navbar';
+import MarketCard from './components/MarketCard';
+import MarketDetail from './components/MarketDetail';
+import Portfolio from './components/Portfolio';
+import CreateMarketForm from './components/CreateMarketForm';
+import { MarketService } from './services/marketService';
+import { Market, User } from './types';
 import { TrendingUp, Zap, Clock, Globe, Trophy, Briefcase, Search, SlidersHorizontal, LayoutGrid, PieChart, PlusCircle, User as UserIcon, Bookmark } from 'lucide-react';
 
 const MAIN_TABS = [
