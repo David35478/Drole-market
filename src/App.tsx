@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import MarketCard from './components/MarketCard';
 import MarketDetail from './components/MarketDetail';
@@ -209,7 +210,7 @@ const App: React.FC = () => {
                             placeholder="Search markets..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full bg-poly-card border border-poly-hover text-white rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-poly-blue focus:ring-1 focus:ring-poly-blue tr[...]"
+                            className="w-full bg-poly-card border border-poly-hover text-white rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-poly-blue focus:ring-1 focus:ring-poly-blue transition-all"
                         />
                     </div>
                     <div className="relative">
@@ -219,7 +220,7 @@ const App: React.FC = () => {
                         <select 
                              value={sortBy}
                              onChange={(e) => setSortBy(e.target.value as any)}
-                             className="appearance-none bg-poly-card border border-poly-hover text-white rounded-xl py-3 pl-10 pr-8 focus:outline-none focus:border-poly-blue cursor-pointer h-full font[...]"
+                             className="appearance-none bg-poly-card border border-poly-hover text-white rounded-xl py-3 pl-10 pr-8 focus:outline-none focus:border-poly-blue cursor-pointer h-full font-medium text-sm"
                         >
                             <option value="volume">24hr Volume</option>
                             <option value="newest">Newest</option>
@@ -269,7 +270,7 @@ const App: React.FC = () => {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-poly-card/95 backdrop-blur-md border-t border-poly-hover pb-safe pt-2 px-6 flex justify-between z-50 h-16 shadow-[0_-4px_6px_-1px_rgba([...)]
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-poly-card/95 backdrop-blur-md border-t border-poly-hover pb-safe pt-2 px-6 flex justify-between z-50 h-16 shadow-lg">
          <button 
            onClick={() => window.location.hash = '#/'}
            className={`flex flex-col items-center gap-1 w-16 ${view === 'home' ? 'text-poly-blue' : 'text-poly-subtext'}`}
