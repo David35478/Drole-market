@@ -8,11 +8,11 @@ Beyond standard trading, this project integrates **AI** to provide real-time sen
 
 ## 🚀 Key Features
 
-*   **📈 Real-Time Trading Simulation:** Experience dynamic price fluctuations, volume updates, and interactive price history charts.
+*   **📈 Real-Time Trading:** Experience dynamic price fluctuations, volume updates, and interactive price history charts.
 *   **🧠 AI Market Pulse:** Integrated with Google Gemini to provide instant market summaries, sentiment scores (Bullish vs. Bearish), and risk analysis.
 *   **💼 Portfolio Management:** Track your positions, calculate Profit & Loss (P&L), and view trade history in a clean dashboard.
 *   **💬 Social Integration:** Market-specific chat rooms allowing users to discuss strategies and react to price movements.
-*   **🔗 Web3 Wallet Integration:** Simulated wallet connection flow, balance management, and transaction signing.
+*   **🔗 Web3 Wallet Integration:** wallet connection flow, balance management, and transaction signing.
 *   **🎨 Modern UI/UX:** A responsive, dark-mode-first design built with Tailwind CSS for a seamless desktop and mobile experience.
 
 ## 🛠️ Tech Stack
